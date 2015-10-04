@@ -114,7 +114,7 @@ function determineLanguage() {
 }
 
 function getLangFromRequest() {
-	$aclang = getallheaders();
+	$aclang = getallheadersA();
 	$lngHead = $aclang['Accept-Language'];
 	if (isset($lngHead)) {
 		$chk = explode(";", $lngHead);
@@ -131,7 +131,7 @@ function getLangFromRequest() {
 	}
 }
 
-function getallheaders()
+function getallheadersA()
 {
 	$headers = '';
 	foreach ($_SERVER as $name => $value)
