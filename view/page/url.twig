@@ -1,0 +1,29 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+	<!-- 
+	<div itemprop="specialty" itemscope itemtype="http://schema.org/Specialty">
+		<span itemprop="name">Encode or decode data by using base64 encoding scheme</span>
+		<span itemprop="description">Type in the text you want to encode or load it from file. 
+		If the file is recognized as a textfile the contents will be filled into the text area. 
+		You can encode or decode the text by using the appropriate buttons.
+		In case the loaded file is a binary, then it will be automatically encoded into base64 and displayed into the result.</span>
+	</div>
+	 -->
+	<div id="srcblock">
+		<label for="srctext" id="srctextlabel">{{textResources.inputText}}</label>
+		<textarea id="srctext" name="srctext" cols="60" rows="8" onkeyup="javascript:charcount('srctext','srccharcnt')"></textarea>
+		<div class="txtcounter"><p>{{textResources.textLength}} <span id="srccharcnt">0</span></p></div>
+	</div>
+	<div class="actions" id="toolactions">
+		<button class="buttonjs" onclick="javascript:tourl(event);">{{textResources.encode}}</button>
+		<button class="buttonjs" onclick="javascript:fromurl(event);">{{textResources.decode}}</button>
+	</div>
+	<div id="resultSection" style="display:none">
+		<label for="dsttext">{{textResources.outputText}}</label>
+		<a href="#" title="{{textResources.selectResultTitle}}" onclick="javascript:selectResult(event)">{{textResources.selectResult}}</a>
+		<textarea id="dsttext" cols="60" rows="8"></textarea>
+		<div class="txtcounter"><p>{{textResources.textLength}} <span id="dstcharcnt">0</span></p></div>
+		{% include "fragment/forwardTo.twig" %}
+	</div>
+{% endblock %}

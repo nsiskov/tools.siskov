@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /images
+Disallow: /css
+Disallow: /errors
+Disallow: /js
+Allow: /
+
+Sitemap: http://tools.siskov.info/sitemap.xml 

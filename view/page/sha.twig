@@ -1,0 +1,29 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div id="srcblock">
+	<label for="srctext">{{textResources.inputText}}</label>
+	<span class="file-wrapper" id="fileLoad" style="display:none">
+		<label for="filesrc">{{textResources.orText|raw}}</label>
+	    <input type="file" name="filesrc" id="filesrc" />
+	    <a href="#" onclick="javascript:openFileDialog(event);">{{textResources.inputLoadTextFile}}</a>
+    </span>
+	<textarea id="srctext" name="srctext" cols="60" rows="8" onkeyup="javascript:charcount('srctext','srccharcnt')"></textarea>
+	<div class="txtcounter"><p>{{textResources.textLength}} <span id="srccharcnt">0</span></p></div>
+</div>
+<div class="actions">
+	<button class='buttonjs' onclick="javascript:tosha{{sha}}hex();">sha-{{sha}} HEX</button>
+	<button class='buttonjs' onclick="javascript:tosha{{sha}}b64();">sha-{{sha}} Base64</button>
+</div>
+<div id="resultSection" style="display:none">
+	<label for="dsttext">{{textResources.outputText}}</label>
+	<a href="#" onclick="javascript:selectResult(event)">{{textResources.selectResult}}</a>
+	{% if (sha == '512') %}
+	<textarea id="dsttext" cols="60" rows="2"></textarea>
+	{% else %} 
+	<input id="dsttext" type="text" ></input>
+	{% endif %}
+	<div class="txtcounter"><p>{{textResources.textLength}} <span id="dstcharcnt">0</span></p></div>
+	{% include "fragment/forwardTo.twig" %}
+</div>
+{% endblock %}

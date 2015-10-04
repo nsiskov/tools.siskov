@@ -1,0 +1,416 @@
+* {
+	position: relative;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section
+	{
+	display: block;
+}
+
+audio,canvas,video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+figure,form {
+	margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+  
+label {
+	float: left;
+	cursor: pointer;
+	display: block;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	background: #fff;
+	min-width: 600px;
+	font-size: 90%;
+	font: 81.25%/1 arial, helvetica, sans-serif;
+	color: #333333;
+}
+
+a {
+	color: #369;
+}
+
+a:hover {
+	color: #fff;
+	background: #369;
+	text-decoration: none;
+}
+
+h1,h2,h3 {
+	margin: .8em 0 .2em 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 22px;
+}
+
+
+p {
+	margin: .8em 0 .4em 0;
+	padding: 0;
+}
+
+a,img {
+	border: none;
+}
+
+/* Header styles */
+#header {
+	clear: both;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #000;
+}
+
+#header p,#header h1,#header h2 {
+	padding: .4em 15px 0 15px;
+	margin: 0;
+}
+
+/* Main navigation */
+
+ul#mainnav {
+	clear: left;
+	float: left;
+	width: 100%;
+	list-style: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	left: 20px;
+}
+
+ul#mainnav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    float: left;
+    position: relative;
+    margin: 0 0 1px;
+}
+
+ul#mainnav li a, ul#mainnav li span {
+	display: block;
+	margin: 0 0 0 1px;
+	padding: 3px 10px;
+	text-align: center;
+	background: lightblue;
+	color: #000;
+	text-decoration: none;
+	position: relative;
+	line-height: 1.3em;
+}
+
+.subnav ul {
+	padding: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.subnav ul.opened {
+    background: none repeat scroll 0 0 green;
+    border-color: green;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.subnav ul li {
+	clear:both;
+}
+
+ul#mainnav li.subnav ul.hmac li a {
+	width: 120px;
+	text-align: left;
+}
+ul#mainnav li.subnav ul.sha li a {
+	width: 80px;
+	text-align: left;
+}
+
+
+ul#mainnav li span {
+	cursor: pointer;
+}
+
+ul#mainnav li a:hover, ul#mainnav li span:hover {
+	background: #369;
+	color: #fff;
+}
+
+ul#mainnav li a.active,ul#mainnav li a.active:hover {
+	color: #fff;
+	background: #000;
+	font-weight: bold;
+}
+
+ul#mainnav li a span {
+	display: block;
+}
+
+
+/* Layout 
+#layoutdims {
+	clear: both;
+	background: #ffffff;
+	border-top: 4px solid #000;
+	margin: 0;
+	padding: 6px 15px !important;
+	text-align: right;
+}
+*/
+/* column container */
+.colmask {
+	position: relative; /* This fixes the IE7 overflow hidden bug */
+	clear: both;
+	float: left;
+	width: 100%; /* width of whole page */
+	overflow: hidden; /* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,.colmid,.colleft {
+	float: left;
+	width: 100%; /* width of page */
+	position: relative;
+}
+
+.col1,.col2,.col3 {
+	float: left;
+	position: relative;
+	padding: 0 0 1em 0;
+	/* no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
+	overflow: hidden;
+}
+/* 2 Column (right menu) settings */
+.rightmenu {
+	background:#fff;		/* right column background colour */
+}
+.rightmenu .colleft {
+	right:25%;			/* right column width */
+	background:#fff;		/* left column background colour */
+}
+.rightmenu .col1 {
+	width:71%;			/* left column content width (left column width minus left and right padding) */
+	left:27%;			/* (right column width) plus (left column left padding) */
+}
+.rightmenu .col2 {
+	width:21%;			/* right column content width (right column width minus left and right padding) */
+	left:31%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+
+.main {
+	width:100%;
+}
+
+.mainleft {
+	float:left;
+	position:fixed;
+}
+
+.mainright {
+	clear:right;
+}
+/* Footer styles */
+#footer {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+#footer p {
+	padding: 10px;
+	margin: 0;
+	text-align: center;
+}
+
+/* End of the layout */
+
+input, textarea {
+	background-color: lightblue;
+	border-color: green;
+	border-style: solid;
+	border-width: 1px;
+	color: black;
+}
+
+#dsttext,#srckey,#srctext {
+	width: 100%;
+	float: left;
+}
+
+#usernamelabel,#passwordlabel {
+	max-width: 150px;
+    min-width: 100px;
+    height: 20px;
+    margin: 5px 0 0 0;
+}
+#username,#password {
+	width: 150px;
+	clear:right;
+	display: block;
+    height: 20px;
+    margin: 5px;
+}
+
+#resultSection p {
+	display: block;
+	clear:both;
+}
+
+#resultSection label {
+	font-weight: bold;
+}
+
+#resultSection input {
+	margin-bottom: 10px;
+}
+
+div#headnav {
+	left: 100px;
+	width: 800px;
+}
+
+.txtcounter {
+	float: right;
+}
+
+.actions {
+	margin: 0 0 1.5em;
+}
+
+.actions,.chainto {
+	clear: both;
+}
+
+.txtcounter p {
+	margin: 0 0 0.4em 0;
+	min-width: 50px;
+}
+
+button {
+	border-style: solid;
+	border-width: 1px;
+	margin: 0 0.5em 0 0;
+}
+
+.buttonjs {
+	border-color: green;
+}
+
+.buttonpb {
+	border-style: dotted;
+	border-color: red;
+	border-width: 2px;
+}
+
+.sidecontent {
+	line-height: 1.2;
+	margin: 1.4em 0 0 0;
+}
+
+#logo {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 50px;
+}
+
+#title {
+	left: 100px;
+	width: 600px;
+}
+
+.tooltitle {
+	float: left;
+}
+
+.social {
+	float: right;
+	margin: 1.5em 0 0 0;
+	height: 25px;
+}
+
+form {
+	clear: both;
+	height: 100%;
+	width: 100%;
+}
+
+#horizontalAdsSection {
+	top: 0.2em;
+	float: right;
+}
+
+#srcblock {
+	clear: both;
+}
+
+.file-wrapper {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.file-wrapper input {
+  cursor: pointer;
+  font-size: 100px;
+  height: 100%;
+  filter: alpha(opacity=1);
+  -moz-opacity: 0.01;
+  opacity: 0.01;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+#resultSection a {
+	padding: 0 0 0 3px;
+}
+
+#srcfileloaded {
+	height: 150px;
+	padding: 10px 0 0 0;
+}
+
+.intro {
+	clear: right;
+	line-height: 1.1;
+	margin: 0 0 5px;
+}
+
+#resultSection input {
+	display: block;
+	width: 100%;
+}
+
+.tooldescription {
+	clear: both;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	line-height: 1.2;
+}

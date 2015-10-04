@@ -1,0 +1,10 @@
+ErrorDocument 404 /errors/notfound.html
+ErrorDocument 403 /errors/forbidden.html
+
+RewriteEngine on
+
+#with language
+RewriteRule ^(.{2})/(.+?)\.html$ tools.php?t=$2&lng=$1  [NC,L,QSA]
+
+#without language
+RewriteRule ^(.+?)\.html$ tools.php?t=$1  [NC,L,QSA]

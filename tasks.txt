@@ -1,0 +1,7 @@
+[features]
+- finetune the css (ie, ff), labels, paragraphs
+- 2 columns
+ - twitter bootstrap
+
+[localization]
+- add translations

@@ -1,0 +1,39 @@
+<project name="Tools.Siskov" default="target" basedir=".">
+  <property name="src" location="."/>
+  <property name="dist" location="target"/>
+
+  <target name="init">
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${dist}"/>
+  </target>
+
+
+  <target name="target" depends="clean,init"
+        description="generate the distribution" >
+
+    <copy todir="${dist}">
+      <fileset dir="${src}">
+        <exclude name="**/.git/**" />
+        <exclude name="**/.settings/**" />
+        <exclude name="**/cache/**" />
+        <exclude name="**/contact/**" />
+        <exclude name="**/css/dev/" />
+        <exclude name="**/js/dev/" />
+        <exclude name="**/sql_scripts/**" />
+        <exclude name="**/target/**" />
+        <exclude name="**/images/src/" />
+        <exclude name="**/.buildpath" />
+        <exclude name="**/.gitignore" />
+        <exclude name="**/.project" />
+        <exclude name="build.xml" />
+        <exclude name="tasks.txt" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <delete dir="${dist}"/>
+  </target>
+</project>

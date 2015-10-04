@@ -1,0 +1,32 @@
+<div id="header" class="header">
+	<a href="{{host}}" title="Siskov tools">
+		<img itemprop="image" id="logo" src="images/logo_small.jpg" alt="logo" width="100" height="50"/>
+	</a>
+	<h1 id="title">{{textResources.tools}}  - <span itemprop="name">{{pageContext.mainTitle}}</span></h1>
+	<div id="headnav" itemprop="breadcrumb" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<ul id="mainnav">
+			<li><a href="{{pageContext.lang}}/base64.html" itemprop="relatedLink" title="{{textResources.base64_headTitle}}">{{textResources.base64_linkTitle}}</a></li>
+			<li><a href="{{pageContext.lang}}/html.html" itemprop="relatedLink" title="{{textResources.html_headTitle}}">{{textResources.html_linkTitle}}</a></li>
+			<li><a href="{{pageContext.lang}}/url.html" itemprop="relatedLink" title="{{textResources.url_headTitle}}">{{textResources.url_linkTitle}}</a></li>
+			<li><a href="{{pageContext.lang}}/htpasswd.html" itemprop="relatedLink" title="{{textResources.htpasswd_headTitle}}">{{textResources.htpasswd_linkTitle}}</a></li>
+			<li><a href="{{pageContext.lang}}/md5.html" itemprop="relatedLink" title="{{textResources.md5_headTitle}}">{{textResources.md5_linkTitle}}</a></li>
+			<li class="subnav">
+				<span>SHA</span>
+				<ul style="display: none;" class="sha">
+					<li><a href="{{pageContext.lang}}/sha1.html" itemprop="relatedLink" title="{{textResources.sha1_headTitle}}">{{textResources.sha1_linkTitle}}</a></li>
+					<li><a href="{{pageContext.lang}}/sha256.html" itemprop="relatedLink" title="{{textResources.sha256_headTitle}}">{{textResources.sha256_linkTitle}}</a></li>
+					<li><a href="{{pageContext.lang}}/sha512.html" itemprop="relatedLink" title="{{textResources.sha512_headTitle}}">{{textResources.sha512_linkTitle}}</a></li>
+				</ul>
+			</li>
+			<li class="subnav">
+				<span>HMAC</span>
+				<ul style="display: none;" class="hmac">
+					<li><a href="{{pageContext.lang}}/hmacmd5.html" itemprop="relatedLink" title="{{textResources.hmacmd5_headTitle}}">{{textResources.hmacmd5_linkTitle}}</a></li>
+					<li><a href="{{pageContext.lang}}/hmacsha1.html" itemprop="relatedLink" title="{{textResources.hmacsha1_headTitle}}">{{textResources.hmacsha1_linkTitle}}</a></li>
+					<li><a href="{{pageContext.lang}}/hmacsha256.html" itemprop="relatedLink" title="{{textResources.hmacsha256_headTitle}}">{{textResources.hmacsha256_linkTitle}}</a></li>
+					<li><a href="{{pageContext.lang}}/hmacsha512.html" itemprop="relatedLink" title="{{textResources.hmacsha512_headTitle}}">{{textResources.hmacsha512_linkTitle}}</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

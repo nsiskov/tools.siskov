@@ -1,0 +1,51 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="tooldescription" itemprop="specialty" itemscope itemtype="http://schema.org/Specialty">
+	<span itemprop="name"><strong>{{ pageContext.pageTitle }}</strong></span>
+	<span itemprop="description">{{ pageContext.pageDescription|raw }}</span>
+</div>
+<form name="base" method="post" action="base64.html">
+	<div id="srcfileloaded" style="display:none;">
+		<strong>{{pageContext.fileName}}&nbsp;</strong><span id="fileName"></span>
+		<br/>
+		<br/>
+		<strong>{{pageContext.fileSize}}&nbsp;</strong><span id="fileSize"></span><span>&nbsp;bytes</span>
+		<br/>
+		<br/>
+		<strong>{{pageContext.fileMimeType}}&nbsp;</strong><span id="fileType"></span>
+		<br/>
+		<br/>
+		<strong>{{pageContext.fileUrlSchemaPrefix}}&nbsp;</strong><span id="dataUrlPrefix"></span>
+		<br/>
+		<br/>
+		<a href="/base64.html" title="{{textResources.resetTitle}}">{{textResources.reset}}</a>
+	</div>
+	<div id="srcblock">
+		<label for="srctext" id="srctextlabel">{{textResources.inputText}}</label>
+	    <span class="file-wrapper" id="fileLoad" style="display:none">
+			<label for="filesrc">{{textResources.orText|raw}}</label>
+		    <input type="file" name="filesrc" id="filesrc" />
+		    <a href="#" title="{{textResources.inputLoadAnyFileTitle}}" onclick="javascript:openFileDialog(event);">{{textResources.inputLoadAnyFile}}</a>
+	    </span>
+		<textarea id="srctext" name="srctext" cols="60" rows="8" onkeyup="javascript:charcount('srctext','srccharcnt')"></textarea>
+		<div class="txtcounter"><p>{{textResources.textLength}} <span id="srccharcnt">0</span></p></div>
+	</div>
+	<div class="actions" id="toolactions">
+		<button class="buttonjs" onclick="javascript:tobase64(event);">{{textResources.encode}}</button>
+		<button class="buttonjs" onclick="javascript:frombase64(event);">{{textResources.decode}}</button>
+		<button class="buttonpb" name="download">{{textResources.binaryDownload}}</button>
+	</div>
+</form>
+<div id="resultSection" style="display:none">
+	<label for="dsttext">{{textResources.outputText}}</label>
+	<a href="#" title="{{textResources.selectResultTitle}}" onclick="javascript:selectResult(event)">{{textResources.selectResult}}</a>
+	<textarea id="dsttext" cols="60" rows="8"></textarea>
+	<div class="txtcounter"><p>{{textResources.textLength}} <span id="dstcharcnt">0</span></p></div>
+	{% include "fragment/forwardTo.twig" %}
+</div>
+{% endblock %}
+
+{%block right %}
+{{pageContext.explanation|raw}}
+{% endblock %}
